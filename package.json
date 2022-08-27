@@ -2,7 +2,7 @@
   "name": "parcel-project-template",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://kyzym1.github.io/55-bl-parcel",
+  "homepage": "https://kyzym.github.io/55-bl-parcel",
   "scripts": {
     "start": "parcel src/*.html",
     "build": "parcel build src/*.html --public-url /55-bl-parcel/"
