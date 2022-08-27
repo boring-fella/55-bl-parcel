@@ -31,13 +31,23 @@ form.addEventListener('input', handleInput);
 
 function initPage() {
   const savedData = storageAPI.load('formKey');
-
+console.log(savedData);
   if (!savedData) {
     return;
   }
-  const savedDataObj = JSON.parse(savedData);
-  console.log(savedDataObj);
-  Object.entries(savedDataObj).forEach(([name, value]) => {
+  Object.entries(savedData).forEach(([name, value]) => {
     form.elements[name].value = value;
   });
+}
+
+form.addEventListener('submit', handleSubmit);
+
+function handleSubmit (event) {
+  event.preventDefault();
+  const {
+    elements: { name, email, message }
+  } = event.currentTarget;
+  console.log({name: name.value, email: email.value, message: message.value});
+  event.currentTarget.reset();
+  storageAPI.remove('formKey')
 }
