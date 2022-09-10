@@ -2,6 +2,8 @@ import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
 
+const outputDateEl = document.querySelector('.timer');
+
 const refs = {
   startBtn: document.querySelector('[data-start]'),
   canvas: document.querySelectorAll('#stockGraph'),
@@ -17,7 +19,7 @@ const refs = {
   },
 };
 
-const widthField = '150px';
+const widthField = outputDateEl.firstElementChild.offsetWidth;
 const halfWidthField = Math.floor(widthField / 2);
 
 refs.canvas.forEach(canvas => {
@@ -66,6 +68,9 @@ function changeInterface(deltaTime) {
   const data = convertMs(deltaTime);
   Object.entries(data).forEach(([key, value], index) => {
     refs.intrfaceEl[key].textContent = addLeadingZero(value);
+    if (key === 'days') {
+      return;
+    }
     drawCircle(index, value);
   });
 }
@@ -101,7 +106,7 @@ function drawCircle(index, value) {
   ctx.strokeStyle = 'rgb(254, 61, 43)';
 
   ctx.lineWidth = 4;
-  // ctx.lineCap = 'round';
+  ctx.lineCap = 'round';
   let path = 60 / 2;
   if (index === 1) {
     path = 24 / 2;
