@@ -10,8 +10,10 @@
     <script type="module" src="./js/timer.js"></script>
   </head>
   <body>
-    <input class="js-input" type="text" id="datetime-picker" />
-    <button type="button" disabled data-start>Start</button>
+    <div class="output-timer">
+      <input class="js-input" type="text" id="datetime-picker" />
+      <button type="button" disabled data-start>Start</button>
+    </div>
 
     <div class="timer">
       <div class="field">
@@ -35,6 +37,7 @@
         <canvas id="stockGraph" data-seconds width="0" height="0"> </canvas>
       </div>
     </div>
+
     <audio
       class="audio"
       src="../src/audio/src_timer.mp3"
