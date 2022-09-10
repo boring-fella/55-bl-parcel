@@ -1,0 +1,37 @@
+.timer {
+  display: flex;
+  gap: 20px;
+  margin-top: 10vh;
+  padding: 20px;
+  justify-content: center;
+}
+.field {
+  position: relative;
+
+  border: solid 3px rgb(100, 97, 114);
+  border-radius: 50% 50%;
+  width: 20vw;
+  height: 20vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.value {
+  color: #ffffff;
+  font-size: 11vw;
+  line-height: 1;
+  font-weight: 600;
+}
+.label {
+  color: rgb(135, 131, 148);
+  font-size: 2.5vw;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+canvas {
+  position: absolute;
+}
+body {
+  background-color: rgb(43, 40, 61);
+}
