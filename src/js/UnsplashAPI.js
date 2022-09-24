@@ -20,6 +20,18 @@ export class UnsplashAPI {
     );
     return data;
   }
+
+  async getFotosByQuery(page) {
+    const { data } = await axios.get(
+      `?page=${page}&query=${this.#query}`,
+      this.#searchParams
+    );
+    return data;
+  }
+
+  set query(newQuery) {
+    this.#query = newQuery;
+  }
 }
 
 // https://api.unsplash.com/search/photos?page=1&query=office
